@@ -40,7 +40,7 @@ export const sampleShows: Show[] = [
             title: 'Past and Present',
             description: 'As the police search for Mikkel, Jonas learns that most of the cave\'s tunnels are part of an old mining system... and that time itself may be twisted in Winden.',
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
-            videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
+            videoUrl: 'https://idoxd2z.sufydely.com/dark/season1/Dark.S01E03.Past.and.Present.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E03.WEBRip.x264-ION10.srt',
             duration: 3240,
             englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e03.m4a'
@@ -50,7 +50,7 @@ export const sampleShows: Show[] = [
             title: 'Past and Present',
             description: 'As the police search for Mikkel, Jonas learns that most of the cave\'s tunnels are part of an old mining system... and that time itself may be twisted in Winden.',
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
-            videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
+            videoUrl: 'https://idoxd2z.sufydely.com/dark/season1/Dark.S01E04.Double.Lives.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E04.WEBRip.x264-ION10.srt',
             duration: 3240,
             englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e04.m4a'
@@ -60,7 +60,7 @@ export const sampleShows: Show[] = [
             title: 'Truths',
             description: 'Hannahs obsession with Ulrich crosses the line, and Regina is asked to deliver a special package for the stranger. Meanwhile, Martha has a tough decision to make.',
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
-            videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
+            videoUrl: 'https://idoxd2z.sufydely.com/dark/season1/Dark.S01E05.Truths.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E05.WEBRip.x264-ION10.srt',
             duration: 3240,
             englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e05.m4a'
@@ -70,7 +70,7 @@ export const sampleShows: Show[] = [
             title: 'Sic Mundus Creatus Est',
             description: 'Ulrich looks to the past for answers and dredges up disturbing family secrets; armed with new tools, Jonas probes the caves murky depths.',
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
-            videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
+            videoUrl: 'https://idoxd2z.sufydely.com/dark/season1/Dark.S01E06.Sic.Mundus.Creatus.Est.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E06.WEBRip.x264-ION10.srt',
             duration: 3240,
             englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e06.m4a'
@@ -80,7 +80,7 @@ export const sampleShows: Show[] = [
             title: 'Crossroads',
             description: 'Ulrich searches for answers from the frail and frightened Helge in the nursing home. Jonas gets a warning from the stranger about meddling with the past.',
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
-            videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
+            videoUrl: 'https://idoxd2z.sufydely.com/dark/season1/Dark.S01E07.Crossroads.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E07.WEBRip.x264-ION10.srt',
             duration: 3240,
             englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e07.m4a'
@@ -90,7 +90,7 @@ export const sampleShows: Show[] = [
             title: 'As You Sow, So You Shall Reap',
             description: 'The disfigured bodies of two boys were found at a construction site in 1953, the future location of the towns nuclear power plant.',
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
-            videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
+            videoUrl: 'https://idoxd2z.sufydely.com/dark/season1/Dark.S01E08.As.You.Sow.so.You.Shall.Reap.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E08.WEBRip.x264-ION10.srt',
             duration: 3240,
             englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e08.m4a'
@@ -100,7 +100,7 @@ export const sampleShows: Show[] = [
             title: 'Everything is Now',
             description: 'Ulrich runs afoul of the law and Helge tries to dodge Egon Tiedemann. Also, Claudia harnesses the caves powers and Katharina lashes out at Hannah.',
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
-            videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
+            videoUrl: 'https://idoxd2z.sufydely.com/dark/season1/Dark.S01E09.Everything.Is.Now.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E09.WEBRip.x264-ION10.srt',
             duration: 3240,
             englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e09.m4a'
@@ -110,7 +110,7 @@ export const sampleShows: Show[] = [
             title: 'Alpha and Omega',
             description: 'Peter learns the shocking truth about his family, however, this is not the only surprise to come. Meanwhile, Helge decides to make a sacrifice.',
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
-            videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
+            videoUrl: 'https://idoxd2z.sufydely.com/dark/season1/Dark.S01E10.Alpha.and.Omega.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E10.WEBRip.x264-ION10.srt',
             duration: 3240,
             englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e10.m4a'
