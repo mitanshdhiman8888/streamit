@@ -24,4 +24,5 @@ export interface Show {
     videoUrl: string;
     subtitles?: string;
     duration: number;
+    englishAudio?: string;
   }
