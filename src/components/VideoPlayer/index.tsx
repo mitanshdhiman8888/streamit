@@ -23,6 +23,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const playerRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -249,6 +250,9 @@ const handleAudioTrackChange = (trackKey: string) => {
         onClick={togglePlay}
         playsInline
       ></video>
+      
+      <audio ref={audioRef} hidden />
+
       
       {subtitles && subtitleEnabled && (
         <Subtitles subtitleUrl={subtitles} currentTime={currentTime} />
