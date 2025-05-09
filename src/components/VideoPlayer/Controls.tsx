@@ -28,6 +28,9 @@ interface ControlsProps {
   onToggleSubtitles: () => void;
   onChangeQuality: (quality: string) => void;
   onToggleSettings: () => void;
+  audioTracks: { [key: string]: string }; 
+  selectedAudioTrack: string; 
+  onAudioTrackChange: (trackKey: string) => void;
 }
 
 const Controls: React.FC<ControlsProps> = ({
@@ -52,7 +55,10 @@ const Controls: React.FC<ControlsProps> = ({
   onChangePlaybackRate,
   onToggleSubtitles,
   onChangeQuality,
-  onToggleSettings
+  onToggleSettings,
+  audioTracks,
+  selectedAudioTrack,
+  onAudioTrackChange
 }) => {
   // Calculate progress percentage
   const progress = duration ? (currentTime / duration) * 100 : 0;
@@ -207,6 +213,20 @@ const Controls: React.FC<ControlsProps> = ({
                         </button>
                       ))}
                     </div>
+                  </div>
+                        {/* Audio Track Selector */}
+                  <div className="p-2 border-b border-gray-700">
+                    <p className="text-xs mb-1">Audio</p>
+                    <select 
+                      id="audioSelect" 
+                      value={selectedAudioTrack}
+                      onChange={(e) => onAudioTrackChange(e.target.value)}
+                      className="bg-black/50 text-white px-2 py-1 rounded-md w-full text-xs"
+                    >
+                      {Object.entries(audioTracks).map(([key, label]) => (
+                        <option key={key} value={key}>{label}</option>
+                      ))}
+                    </select>
                   </div>
                   
                   <div className="p-2">
