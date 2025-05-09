@@ -36,33 +36,72 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   const [subtitleEnabled, setSubtitleEnabled] = useState(true);
   const [quality, setQuality] = useState('auto');
   const [showSettings, setShowSettings] = useState(false);
-  const [selectedAudioTrack, setSelectedAudioTrack] = useState('');
-  
+  const [selectedAudioTrack, setSelectedAudioTrack] = useState('default');
+
   const { savedTime, saveProgress } = useSavedProgress(showId, seasonId, episodeId);
+
   const audioTracks = {
+    default: 'Original',
     en: 'English',
-    es: 'Spanish',
-    fr: 'French'
-  }
-  
+  };
+
+  const englishAudioUrl = `https://your-bucket-url/${showId}/${seasonId}/${episodeId}-en.m4a`;
+
   useOnClickOutside(playerRef, () => {
     setShowSettings(false);
   });
-  
-const handleAudioTrackChange = (trackKey: string) => {
-  setSelectedAudioTrack(trackKey);
-  console.log('Switched to audio track:', trackKey);
-};
 
+  useEffect(() => {
+    const video = videoRef.current;
+    const audio = audioRef.current;
 
-  // Set up video event listeners
+    if (!video || !audio || selectedAudioTrack !== 'en') return;
+
+    const syncAudio = () => {
+      if (Math.abs(audio.currentTime - video.currentTime) > 0.3) {
+        audio.currentTime = video.currentTime;
+      }
+    };
+
+    const handlePlay = () => {
+      audio.currentTime = video.currentTime;
+      audio.play().catch((err) => console.error('Audio play failed:', err));
+    };
+
+    const handlePause = () => audio.pause();
+    const handleSeek = () => { audio.currentTime = video.currentTime; };
+
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
+    video.addEventListener('seeked', handleSeek);
+    video.addEventListener('timeupdate', syncAudio);
+
+    return () => {
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
+      video.removeEventListener('seeked', handleSeek);
+      video.removeEventListener('timeupdate', syncAudio);
+    };
+  }, [selectedAudioTrack, episodeId]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }, [episodeId]);
+
+  const handleAudioTrackChange = (trackKey: string) => {
+    setSelectedAudioTrack(trackKey);
+  };
+
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
     const handleTimeUpdate = () => {
       setCurrentTime(video.currentTime);
-      // Save progress every 5 seconds
       if (Math.floor(video.currentTime) % 5 === 0) {
         saveProgress(video.currentTime);
       }
@@ -71,35 +110,24 @@ const handleAudioTrackChange = (trackKey: string) => {
     const handleLoadedMetadata = () => {
       setDuration(video.duration);
       setIsLoading(false);
-      
-      // Resume from saved position if available
-      if (savedTime > 0) {
-        // Don't resume if we're near the end
-        if (savedTime < video.duration - 30) {
-          video.currentTime = savedTime;
-        }
+      if (savedTime > 0 && savedTime < video.duration - 30) {
+        video.currentTime = savedTime;
       }
     };
 
     const handleEnded = () => {
       setIsPlaying(false);
       setCurrentTime(0);
-      // Clear saved progress when video ends
       saveProgress(0);
     };
 
     video.addEventListener('timeupdate', handleTimeUpdate);
     video.addEventListener('loadedmetadata', handleLoadedMetadata);
     video.addEventListener('ended', handleEnded);
-    
-    // Initial volume setup
     video.volume = volume;
 
-    // Hide controls after 3 seconds of inactivity
     const controlsTimer = setTimeout(() => {
-      if (isPlaying) {
-        setShowControls(false);
-      }
+      if (isPlaying) setShowControls(false);
     }, 3000);
 
     return () => {
@@ -110,78 +138,55 @@ const handleAudioTrackChange = (trackKey: string) => {
     };
   }, [isPlaying, savedTime, saveProgress]);
 
-  // Toggle play/pause
   const togglePlay = () => {
     const video = videoRef.current;
     if (!video) return;
-    
+
     if (isPlaying) {
       video.pause();
       setIsPlaying(false);
     } else {
-      video.play()
-        .catch(error => {
-          console.error('Error playing video:', error);
-        });
+      video.play().catch((error) => console.error('Play error:', error));
       setIsPlaying(true);
     }
   };
 
-  // Handle user interaction to show controls
   const handleMouseMove = () => {
     setShowControls(true);
-    
-    // Hide controls after 3 seconds if playing
     if (isPlaying) {
-      const timer = setTimeout(() => {
-        setShowControls(false);
-      }, 3000);
-      
+      const timer = setTimeout(() => setShowControls(false), 3000);
       return () => clearTimeout(timer);
     }
   };
 
-  // Skip forward/backward
   const handleSkip = (seconds: number) => {
     const video = videoRef.current;
     if (!video) return;
-    
     const newTime = Math.max(0, Math.min(video.currentTime + seconds, video.duration));
     video.currentTime = newTime;
     setCurrentTime(newTime);
   };
 
-  // Handle seek on progress bar
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const video = videoRef.current;
     if (!video) return;
-    
     const newTime = parseFloat(e.target.value);
     video.currentTime = newTime;
     setCurrentTime(newTime);
   };
 
-  // Handle volume change
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const video = videoRef.current;
     if (!video) return;
-    
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
     video.volume = newVolume;
-    
-    if (newVolume === 0) {
-      setIsMuted(true);
-    } else {
-      setIsMuted(false);
-    }
+    setIsMuted(newVolume === 0);
   };
 
-  // Toggle mute
   const toggleMute = () => {
     const video = videoRef.current;
     if (!video) return;
-    
     if (isMuted) {
       video.volume = volume || 0.5;
       setIsMuted(false);
@@ -191,43 +196,32 @@ const handleAudioTrackChange = (trackKey: string) => {
     }
   };
 
-  // Toggle fullscreen
   const toggleFullscreen = () => {
     const player = playerRef.current;
     if (!player) return;
-    
     if (!document.fullscreenElement) {
-      player.requestFullscreen().then(() => {
-        setFullscreen(true);
-      }).catch(err => {
-        console.error('Error attempting to enable fullscreen:', err.message);
-      });
+      player.requestFullscreen().then(() => setFullscreen(true)).catch(console.error);
     } else {
       document.exitFullscreen();
       setFullscreen(false);
     }
   };
 
-  // Change playback rate
   const changePlaybackRate = (rate: number) => {
     const video = videoRef.current;
     if (!video) return;
-    
     video.playbackRate = rate;
     setPlaybackRate(rate);
     setShowSettings(false);
   };
 
-  // Toggle subtitles
   const toggleSubtitles = () => {
     setSubtitleEnabled(!subtitleEnabled);
   };
 
-  // Change video quality (simulated)
   const changeQuality = (newQuality: string) => {
     setQuality(newQuality);
     setShowSettings(false);
-    // In a real implementation, this would switch video sources
   };
 
   return (
@@ -242,48 +236,50 @@ const handleAudioTrackChange = (trackKey: string) => {
           <div className="w-12 h-12 border-4 border-red-600 border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
-      
+
       <video
         ref={videoRef}
         src={src}
         className="w-full h-full object-contain"
         onClick={togglePlay}
         playsInline
+        muted={selectedAudioTrack === 'en'}
       ></video>
-      
-      <audio ref={audioRef} hidden />
 
-      
+      {selectedAudioTrack === 'en' && (
+        <audio ref={audioRef} src={englishAudioUrl} preload="auto" hidden />
+      )}
+
       {subtitles && subtitleEnabled && (
         <Subtitles subtitleUrl={subtitles} currentTime={currentTime} />
       )}
-      
+
       <Controls 
-          isPlaying={isPlaying}
-          duration={duration}
-          currentTime={currentTime}
-          volume={volume}
-          isMuted={isMuted}
-          fullscreen={fullscreen}
-          playbackRate={playbackRate}
-          showControls={showControls}
-          subtitleEnabled={subtitleEnabled}
-          quality={quality}
-          showSettings={showSettings}
-          onTogglePlay={togglePlay}
-          onSeek={handleSeek}
-          onSkip={handleSkip}
-          onVolumeChange={handleVolumeChange}
-          onToggleMute={toggleMute}
-          onToggleFullscreen={toggleFullscreen}
-          onChangePlaybackRate={changePlaybackRate}
-          onToggleSubtitles={toggleSubtitles}
-          onChangeQuality={changeQuality}
-          onToggleSettings={() => setShowSettings(!showSettings)}
-          title={title}
-          audioTracks={audioTracks} 
-          selectedAudioTrack={selectedAudioTrack} 
-          onAudioTrackChange={handleAudioTrackChange} 
+        isPlaying={isPlaying}
+        duration={duration}
+        currentTime={currentTime}
+        volume={volume}
+        isMuted={isMuted}
+        fullscreen={fullscreen}
+        playbackRate={playbackRate}
+        showControls={showControls}
+        subtitleEnabled={subtitleEnabled}
+        quality={quality}
+        showSettings={showSettings}
+        onTogglePlay={togglePlay}
+        onSeek={handleSeek}
+        onSkip={handleSkip}
+        onVolumeChange={handleVolumeChange}
+        onToggleMute={toggleMute}
+        onToggleFullscreen={toggleFullscreen}
+        onChangePlaybackRate={changePlaybackRate}
+        onToggleSubtitles={toggleSubtitles}
+        onChangeQuality={changeQuality}
+        onToggleSettings={() => setShowSettings(!showSettings)}
+        title={title}
+        audioTracks={audioTracks} 
+        selectedAudioTrack={selectedAudioTrack} 
+        onAudioTrackChange={handleAudioTrackChange} 
       />
     </div>
   );
