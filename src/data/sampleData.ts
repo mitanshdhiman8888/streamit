@@ -22,7 +22,8 @@ export const sampleShows: Show[] = [
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
             videoUrl: 'http://idoxd2z.sufydely.com/dark/season1/Dark.S01E01.Secrets.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E01.WEBRip.x264-ION10.srt',
-            duration: 3120
+            duration: 3120,
+            englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e01.m4a'
           },
           {
             id: 'ep2',
