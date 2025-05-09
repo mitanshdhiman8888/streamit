@@ -256,28 +256,31 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       )}
       
       <Controls 
-        isPlaying={isPlaying}
-        duration={duration}
-        currentTime={currentTime}
-        volume={volume}
-        isMuted={isMuted}
-        fullscreen={fullscreen}
-        playbackRate={playbackRate}
-        showControls={showControls}
-        subtitleEnabled={subtitleEnabled}
-        quality={quality}
-        showSettings={showSettings}
-        onTogglePlay={togglePlay}
-        onSeek={handleSeek}
-        onSkip={handleSkip}
-        onVolumeChange={handleVolumeChange}
-        onToggleMute={toggleMute}
-        onToggleFullscreen={toggleFullscreen}
-        onChangePlaybackRate={changePlaybackRate}
-        onToggleSubtitles={toggleSubtitles}
-        onChangeQuality={changeQuality}
-        onToggleSettings={() => setShowSettings(!showSettings)}
-        title={title}
+          isPlaying={isPlaying}
+          duration={duration}
+          currentTime={currentTime}
+          volume={volume}
+          isMuted={isMuted}
+          fullscreen={fullscreen}
+          playbackRate={playbackRate}
+          showControls={showControls}
+          subtitleEnabled={subtitleEnabled}
+          quality={quality}
+          showSettings={showSettings}
+          onTogglePlay={togglePlay}
+          onSeek={handleSeek}
+          onSkip={handleSkip}
+          onVolumeChange={handleVolumeChange}
+          onToggleMute={toggleMute}
+          onToggleFullscreen={toggleFullscreen}
+          onChangePlaybackRate={changePlaybackRate}
+          onToggleSubtitles={toggleSubtitles}
+          onChangeQuality={changeQuality}
+          onToggleSettings={() => setShowSettings(!showSettings)}
+          title={title}
+          audioTracks={audioTracks} 
+          selectedAudioTrack={selectedAudioTrack} 
+          onAudioTrackChange={handleAudioTrackChange} 
       />
     </div>
   );
