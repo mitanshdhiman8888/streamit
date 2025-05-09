@@ -3,6 +3,7 @@ import Controls from './Controls';
 import Subtitles from './Subtitles';
 import { useSavedProgress } from '../../hooks/useSavedProgress';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
+import { getEnglishAudioUrl } from '../../data/sampleData';
 
 interface VideoPlayerProps {
   src: string;
@@ -45,7 +46,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     en: 'English',
   };
 
-  const englishAudioUrl = `https://your-bucket-url/${showId}/${seasonId}/${episodeId}-en.m4a`;
+  const englishAudioUrl = getEnglishAudioUrl(showId, seasonId, episodeId);
 
   useOnClickOutside(playerRef, () => {
     setShowSettings(false);
@@ -246,7 +247,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         muted={selectedAudioTrack === 'en'}
       ></video>
 
-      {selectedAudioTrack === 'en' && (
+      {selectedAudioTrack === 'en' && englishAudioUrl && (
         <audio ref={audioRef} src={englishAudioUrl} preload="auto" hidden />
       )}
 
