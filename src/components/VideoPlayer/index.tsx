@@ -3,7 +3,6 @@ import Controls from './Controls';
 import Subtitles from './Subtitles';
 import { useSavedProgress } from '../../hooks/useSavedProgress';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
-import { formatTime } from '../../utils/formatTime';
 
 interface VideoPlayerProps {
   src: string;
