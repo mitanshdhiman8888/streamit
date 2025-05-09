@@ -267,3 +267,14 @@ export const sampleShows: Show[] = [
     ]
   }
 ];
+
+export const getEnglishAudioUrl = (showId: string, seasonId: string, episodeId: string): string | null => {
+  const show = sampleShows.find(show => show.id === showId);
+  if (!show) return null;
+
+  const season = show.seasons.find(season => season.id === seasonId);
+  if (!season) return null;
+
+  const episode = season.episodes.find(episode => episode.id === episodeId);
+  return episode?.englishAudio || null;
+};
