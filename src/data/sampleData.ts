@@ -20,7 +20,7 @@ export const sampleShows: Show[] = [
             title: 'Secrets',
             description: 'In 2019, a local boy\'s disappearance stokes fear in the residents of Winden, a small German town with a strange and tragic history. As the mystery deepens, four families discover they are connected in unimaginable ways.',
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
-            videoUrl: 'http://idoxd2z.sufydely.com/3%20Second%20Video.mp4',
+            videoUrl: 'http://idoxd2z.sufydely.com/dark/season1/Dark.S01E01.Secrets.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E01.WEBRip.x264-ION10.srt',
             duration: 3120
           },
@@ -29,7 +29,7 @@ export const sampleShows: Show[] = [
             title: 'Lies',
             description: 'When a grim discovery leaves the police baffled, Ulrich seeks a search warrant for the power plant. A mysterious stranger checks into the hotel.',
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
-            videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
+            videoUrl: 'http://idoxd2z.sufydely.com/dark/season1/Dark.S01E02.Lies.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E02.WEBRip.x264-ION10.srt',
             duration: 3180
           },
