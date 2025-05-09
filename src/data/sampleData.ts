@@ -32,7 +32,8 @@ export const sampleShows: Show[] = [
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
             videoUrl: 'http://idoxd2z.sufydely.com/dark/season1/Dark.S01E02.Lies.1080p.WEB-DL.H.264-Telly.mkv',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E02.WEBRip.x264-ION10.srt',
-            duration: 3180
+            duration: 3180,
+            englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e02.m4a'
           },
           {
             id: 'ep3',
@@ -41,7 +42,8 @@ export const sampleShows: Show[] = [
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
             videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E03.WEBRip.x264-ION10.srt',
-            duration: 3240
+            duration: 3240,
+            englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e03.m4a'
           },
           {
             id: 'ep4',
@@ -50,7 +52,8 @@ export const sampleShows: Show[] = [
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
             videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E04.WEBRip.x264-ION10.srt',
-            duration: 3240
+            duration: 3240,
+            englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e04.m4a'
           },
           {
             id: 'ep5',
@@ -59,7 +62,8 @@ export const sampleShows: Show[] = [
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
             videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E05.WEBRip.x264-ION10.srt',
-            duration: 3240
+            duration: 3240,
+            englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e05.m4a'
           },
           {
             id: 'ep6',
@@ -68,7 +72,8 @@ export const sampleShows: Show[] = [
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
             videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E06.WEBRip.x264-ION10.srt',
-            duration: 3240
+            duration: 3240,
+            englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e06.m4a'
           },
           {
             id: 'ep7',
@@ -77,7 +82,8 @@ export const sampleShows: Show[] = [
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
             videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E07.WEBRip.x264-ION10.srt',
-            duration: 3240
+            duration: 3240,
+            englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e07.m4a'
           },
           {
             id: 'ep8',
@@ -86,7 +92,8 @@ export const sampleShows: Show[] = [
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
             videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E08.WEBRip.x264-ION10.srt',
-            duration: 3240
+            duration: 3240,
+            englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e08.m4a'
           },
           {
             id: 'ep9',
@@ -95,7 +102,8 @@ export const sampleShows: Show[] = [
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
             videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E09.WEBRip.x264-ION10.srt',
-            duration: 3240
+            duration: 3240,
+            englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e09.m4a'
           },
           {
             id: 'ep10',
@@ -104,7 +112,8 @@ export const sampleShows: Show[] = [
             thumbnail: 'http://idoxd2z.sufydely.com/ChatGPT%20Image%20May%209%2C%202025%2C%2011_08_10%20AM.png',
             videoUrl: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
             subtitles: 'https://raw.githubusercontent.com/mitanshdhiman8888/subtitle/main/DARK.S01E10.WEBRip.x264-ION10.srt',
-            duration: 3240
+            duration: 3240,
+            englishAudio: 'https://idoxd2z.sufydely.com/audio/season1/output-s01e10.m4a'
           }
         ]
       },
