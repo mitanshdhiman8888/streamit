@@ -47,6 +47,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   useOnClickOutside(playerRef, () => {
     setShowSettings(false);
   });
+  
+const handleAudioTrackChange = (trackKey: string) => {
+  setSelectedAudioTrack(trackKey);
+  console.log('Switched to audio track:', trackKey);
+};
+
 
   // Set up video event listeners
   useEffect(() => {
@@ -73,13 +79,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         }
       }
     };
-    
-    const handleAudioTrackChange = (trackKey: string) => {
-      setSelectedAudioTrack(trackKey);
-      // In a real implementation, you would switch audio tracks here
-      console.log('Switched to audio track:', trackKey);
-    };
-
 
     const handleEnded = () => {
       setIsPlaying(false);
