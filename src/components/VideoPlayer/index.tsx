@@ -35,8 +35,14 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   const [subtitleEnabled, setSubtitleEnabled] = useState(true);
   const [quality, setQuality] = useState('auto');
   const [showSettings, setShowSettings] = useState(false);
+  const [selectedAudioTrack, setSelectedAudioTrack] = useState('');
   
   const { savedTime, saveProgress } = useSavedProgress(showId, seasonId, episodeId);
+  const audioTracks = {
+    en: 'English',
+    es: 'Spanish',
+    fr: 'French'
+  }
   
   useOnClickOutside(playerRef, () => {
     setShowSettings(false);
@@ -67,6 +73,13 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         }
       }
     };
+    
+    const handleAudioTrackChange = (trackKey: string) => {
+      setSelectedAudioTrack(trackKey);
+      // In a real implementation, you would switch audio tracks here
+      console.log('Switched to audio track:', trackKey);
+    };
+
 
     const handleEnded = () => {
       setIsPlaying(false);
